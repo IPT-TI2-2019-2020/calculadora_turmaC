@@ -1,31 +1,101 @@
 ﻿@{
-    ViewData["Title"] = "Calculadora";
+   ViewData["Title"] = "Calculadora";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Calculadora</h1>
-    <br /><br />
+   <h1 class="display-4">Calculadora</h1>
+   <br /><br />
 
 
-    <!-- isto é uma linha de comentário -->
-    @* e, isto é outra linha de comentário.
-       Este comentário NÃO aparece no browser *@
+   <!-- isto é uma linha de comentário -->
+   @* e, isto é outra linha de comentário.
+      Este comentário NÃO aparece no browser *@
 
-    <!--  Calculadora -->
+   <!--  Calculadora -->
 
-<form>
-    <table>
-        <tr>
-            <td colspan="5"></td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" name="" value="" />
+   <form method="post">
+      <input type="hidden" value="@ViewBag.Operando" name="operando" />
+      <input type="hidden" value="@ViewBag.Operador" name="operador" />
+      @*
+         @{ string opcao = "false";
+            if ((bool)ViewBag.LimparVisor) opcao = "true";
+         }
+         <input type="hidden" value="@opcao" name="limparVisor" />
+      *@
+      <input type="hidden" value="@ViewBag.LimparVisor" name="limparVisor" />
+
+      <table>
+         <tr>
+            <td colspan="5">
+               <!-- Visor -->
+               <input type="text" value="@ViewBag.Visor" name="visor" readonly="readonly" />
             </td>
-        </tr>
-    </table>
+         </tr>
+         <tr>
+            <td>
+               <input type="submit" name="bt" value="7" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="8" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="9" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value=":" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="+/-" class="btn" />
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <input type="submit" name="bt" value="4" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="5" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="6" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="x" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="C" class="btn" />
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <input type="submit" name="bt" value="1" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="2" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="3" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="+" class="btn" />
+            </td>
+            <td rowspan="2">
+               <input type="submit" name="bt" value="=" class="btn" />
+            </td>
+         </tr>
+         <tr>
+            <td colspan="2">
+               <input type="submit" name="bt" value="0" class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="," class="btn" />
+            </td>
+            <td>
+               <input type="submit" name="bt" value="-" class="btn" />
+            </td>
+         </tr>
+      </table>
 
-</form>
+   </form>
 
 
 </div>
